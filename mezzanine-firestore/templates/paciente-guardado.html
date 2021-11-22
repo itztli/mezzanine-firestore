@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+
+{% block title %}  Información  {% endblock %}
+{% block subtitle %}  {% endblock %}
+
+{% block main %}
+
+ <p>
+   El paciente <b>{{ patient.firstName }} {{ patient.lastName }} </b> fue guardado exitosamente.
+ </p>
+
+ <p>
+   <form  method="GET" action="/mdrecords/0/paciente/">{% csrf_token %}
+    <button type="submit">Añadir nuevo paciente</button>
+   </form>
+   <form  method="GET" action="/mdrecords/paciente-lista/">{% csrf_token %}
+    <button type="submit">Continuar</button>
+   </form>
+
+   
+ </p>
+
+
+{% endblock %}

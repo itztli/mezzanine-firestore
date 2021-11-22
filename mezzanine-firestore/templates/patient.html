@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+
+{% block title %}  Nuevo Paciente {% endblock %}
+{% block subtitle %} Plugin Example {% endblock %}
+
+{% block main %}
+<h1>Paciente</h1>
+<div class="well">
+Introduce los datos del paciente, al finalizar no olvides guardar la información.
+</div>
+
+<form method="post" action="/plugin_example/{{patient_code}}/patient/"
+enctype="multipart/form-data">{% csrf_token %}
+
+{{ form }}
+
+<div class="panel-body">
+<table align="right">
+  <tr>
+    <td>
+      <button type="submit" name="save_page_button" class="btn btn-success">Guardar</button>
+    </td>
+    <td>
+      <input type="submit" value="Cancelar" name="cancel_page_button" class="btn btn-danger" formnovalidate>
+    </td>
+    
+   </tr>
+</table>
+</div>
+<div class="jumbotron">
+
+
+<!--<button type="submit" name="cancel_page_button">Cancelar</button>-->
+
+</input>
+</form>
+
+{% endblock %}
