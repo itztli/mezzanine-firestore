@@ -10,7 +10,7 @@
 Introduce los datos del paciente, al finalizar no olvides guardar la información.
 </div>
 
-<form method="post" action="/plugin_example/{{patient_code}}/patient/"
+<form method="post" action="/firestore/{{patient_code}}/patient/"
 enctype="multipart/form-data">{% csrf_token %}
 
 {{ form }}

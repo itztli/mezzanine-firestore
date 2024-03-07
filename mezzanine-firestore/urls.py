@@ -1,11 +1,15 @@
-from django.conf.urls import url, include#, patterns  
+#from django.conf.urls import url, include#, patterns  
 #from django.conf.urls.defaults import *
-from mezzanine_firestore.views import Patient_View
+from django.urls import include, re_path
+from mezzanine_firestore.views import Patient_View, List_Patient_View
 
 #import views
 
 urlpatterns = [
-     url(r'^(?P<patient_code>[^/]+)/patient/$', Patient_View.as_view()), 
+     ## /123/patient/ 
+     re_path(r'^(?P<patient_code>[^/]+)/patient/$', Patient_View.as_view()),
+     ## /2024/list-patient/
+     re_path(r'^(?P<year>[^/]+)/list-patient/$', List_Patient_View.as_view()),
      ##url(r'^(?P<cod_rep>[^/]+)/saved-pacient/$', Pacient_Saved_View.as_view()), 
      #url(r'^paciente-lista', Paciente_List_View.as_view()),
      ##url(r'^(?P<id_report>[^/]+)/-content/$', Report_Content_View.as_view()),
